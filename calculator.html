@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body >
+
+    <form class="form">
+        <div class="calstyle">
+            <input type="text" name="answer" id="in" disabled="" value="" onClick="show(this.value)">
+            <br>
+            <input type="button" name="" value="7" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="8" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="9" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="+" class="op" onclick="op(this.value)"
+            >
+            <br>
+            <input type="button" name="" value="4" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="5" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="6" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="-" class="op" onclick="op(this.value)"
+            style="width: 90px; height: 70px; font-size: 2em; background: white; color: black;"
+            >
+            <br>
+            <input type="button" name="" value="1" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="2" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="3" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="*" class="op" onclick="op(this.value)"
+            style="width: 90px; height: 70px; font-size: 2em; background: white; color: black;"
+            >
+            <br>
+            <input type="button" name="" value="0" class="number" onclick="show(this.value)">
+            <input type="button" name="" value="." class="number" onclick="show(this.value)"
+            style="width: 90px; height: 70px; font-size: 2em; background: white; color: black;"
+            >
+            <input type="button" name="" value="/" class="op" onclick="op(this.value)"
+            style="width: 90px; height: 70px; font-size: 2em; background: white; color: black;"
+            >
+            <input type="button" name="" value="=" style="background: palevioletred; width: 90px; height: 70px; font-size: 2em;" class="op" onclick="res()" 
+            >
+            <br>
+            <input type="button" value="on" id="onoff" onclick="onof()"
+                style="width: 10%; margin: 9px; background: black; color: white;" >
+            <input type="button" value="clear" onClick="form.answer.value=''"
+                style="width: 10%; margin: 9px; background: black;color: white;">
+        </div>
+    </form>
+
+</body>
+
+<script>
+    var value1;
+    var value2;
+    var result;
+    var operator;
+    function show(va) {
+        document.getElementById('in').value += va;
+    }
+    function op(oper) {
+        value1 = parseInt(document.getElementById('in').value);
+        document.getElementById('in').value = "";
+        operator = oper;
+    }
+    function res() {
+        value2 = parseInt(document.getElementById('in').value);
+        if (operator == "+") {
+            result = value1 + value2;
+        }
+        else if (operator == "-") {
+            result = value1 - value2;
+        }
+        else if (operator == "*") {
+            result = value1 * value2;
+        }
+        else if (operator == "/") {
+            result = value1 / value2;
+        }
+        document.getElementById('in').value = result;
+    }
+    var on = 0;
+    function onof() {
+        if (on == 0) {
+            document.getElementById('in').style.color = "black";
+            on++;
+            document.getElementById('onoff').value = "off";
+        }
+        else if (on == 1) {
+            document.getElementById('in').style.color = "white";
+            on--;
+            document.getElementById('onoff').value = "on";
+        }
+    }
+</script>
+
+
+</html>

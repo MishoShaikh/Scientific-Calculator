@@ -1,0 +1,36 @@
+*{
+    
+    overflow: hidden;
+}
+
+body{
+   background-image: url( "https://www.myexpatsipp.com/hs-fs/hubfs/blue%20colours%20background.png?width=1920&name=blue%20colours%20background.png");
+   text-align: center;
+   margin: 120px;
+}
+
+input[type="button"] {
+    background: #fff;
+    border: 3px solid black;
+    color: black;
+    border-radius: 10%;
+    margin: 1px;
+    padding: 1px;
+    height: 70px;
+    width: 90px;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input[type="text"] {
+    border: 3px solid black;
+    color: white;
+    
+    border-radius: 5%;
+    margin: 20px;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+
+}
